@@ -1,10 +1,34 @@
 //import React from "react";
 import { Component } from "react";
 
+
 //class MoiveCard extends React.Component{
 class MoiveCard extends Component{
     render(){
-        return <h2>Moive Card</h2>
+        return (
+            <div className="main">
+                <div className="movie-card">
+                    
+                    <div className="left">
+                        <img alt="Poster"></img>
+                    </div>
+
+                    <div className="right">
+                        <div className="title">The Avengers</div>
+                        <div className="plot">The supernatural power shows</div>
+                        <div className="price">Rs. 199</div>
+
+                        <div className="footer">
+                            <div className="rating">8.9</div>
+                            <div className="stars">Stars</div>
+                            <button className="favourite-btn">Favourite</button>
+                            <button className="cart-btn">Add to cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        );
     }
 }
 
