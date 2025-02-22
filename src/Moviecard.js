@@ -4,7 +4,21 @@ import { Component } from "react";
 
 //class MoiveCard extends React.Component{
 class MoiveCard extends Component{
+
+    constructor(){
+        super();
+        this.state = {
+            title: "The Avengers",
+            plot: "The supernatural power shows",
+            price: 199,
+            rating: 8.9
+        }
+    }
+
     render(){
+
+        const{title,plot,price,rating} = this.state;
+
         return (
             <div className="main">
                 <div className="movie-card">
@@ -14,12 +28,12 @@ class MoiveCard extends Component{
                     </div>
 
                     <div className="right">
-                        <div className="title">The Avengers</div>
-                        <div className="plot">The supernatural power shows</div>
-                        <div className="price">Rs. 199</div>
+                        <div className="title">{title}</div>
+                        <div className="plot">{plot}</div>
+                        <div className="price">Rs. {price}</div>
 
                         <div className="footer">
-                            <div className="rating">8.9</div>
+                            <div className="rating">{rating}</div>
                             <div className="star-dis">
                                 <img alt="decrease" src="https://cdn-icons-png.flaticon.com/128/43/43625.png" className="str-btn"/>
                                 <img alt="stars" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" className="stars"/>
