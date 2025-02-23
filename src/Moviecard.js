@@ -1,5 +1,5 @@
 //import React from "react";
-import { Component } from "react";
+import { Component, startTransition } from "react";
 
 
 //class MoiveCard extends React.Component{
@@ -11,7 +11,8 @@ class MoiveCard extends Component{
             title: "The Avengers",
             plot: "The supernatural power shows",
             price: 199,
-            rating: 8.9
+            rating: 8.9,
+            stars: 0
         }
         // this.addStars = this.addStars.bind(this);
     }
@@ -21,12 +22,29 @@ class MoiveCard extends Component{
     // }
 
     addStars = () => {
+        //this.state.stars += .5;
+        
+        //form1: setState()
+        /*this.setState(
+            {
+                stars: this.state.stars +=0.5
+            }
+        )
+        */
+
+        //form2: setStates()
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars+0.5
+            }
+        }
+        );
         console.log("this.state: ", this.state);
     }
 
     render(){
 
-        const{title,plot,price,rating} = this.state;
+        const{title,plot,price,rating,stars} = this.state;
 
         return (
             <div className="main">
@@ -51,7 +69,7 @@ class MoiveCard extends Component{
                                     //onClick={this.addStars.bind(this)} 
                                     onClick={this.addStars}
                                     className="str-btn"/>
-                                <span>0</span>
+                                <span>{stars}</span>
                             </div>
                             <button className="favourite-btn">Favourite</button>
                             <button className="cart-btn">Add to cart</button>
