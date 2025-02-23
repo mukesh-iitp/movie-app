@@ -42,6 +42,15 @@ class MoiveCard extends Component{
         console.log("this.state: ", this.state);
     }
 
+    removeStars = () => {
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars-0.5
+            }
+        });
+        console.log("this.state: ", this.state);
+    }
+
     render(){
 
         const{title,plot,price,rating,stars} = this.state;
@@ -62,7 +71,11 @@ class MoiveCard extends Component{
                         <div className="footer">
                             <div className="rating">{rating}</div>
                             <div className="star-dis">
-                                <img alt="decrease" src="https://cdn-icons-png.flaticon.com/128/43/43625.png" className="str-btn"/>
+                                <img alt="decrease" 
+                                    src="https://cdn-icons-png.flaticon.com/128/43/43625.png" 
+                                    className="str-btn"
+                                    onClick={this.removeStars}
+                                    />
                                 <img alt="stars" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" className="stars"/>
                                 <img alt="increase" 
                                     src="https://cdn-icons-png.flaticon.com/128/32/32563.png" 
