@@ -13,6 +13,15 @@ class MoiveCard extends Component{
             price: 199,
             rating: 8.9
         }
+        // this.addStars = this.addStars.bind(this);
+    }
+
+    // addStars(){
+    //     console.log("this.state: ", this.state);
+    // }
+
+    addStars = () => {
+        console.log("this.state: ", this.state);
     }
 
     render(){
@@ -37,7 +46,11 @@ class MoiveCard extends Component{
                             <div className="star-dis">
                                 <img alt="decrease" src="https://cdn-icons-png.flaticon.com/128/43/43625.png" className="str-btn"/>
                                 <img alt="stars" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" className="stars"/>
-                                <img alt="increase" src="https://cdn-icons-png.flaticon.com/128/32/32563.png" className="str-btn"/>
+                                <img alt="increase" 
+                                    src="https://cdn-icons-png.flaticon.com/128/32/32563.png" 
+                                    //onClick={this.addStars.bind(this)} 
+                                    onClick={this.addStars}
+                                    className="str-btn"/>
                                 <span>0</span>
                             </div>
                             <button className="favourite-btn">Favourite</button>
