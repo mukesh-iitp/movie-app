@@ -1,5 +1,5 @@
 //import React from "react";
-import { Component, startTransition } from "react";
+import { Component } from "react";
 
 
 //class MoiveCard extends React.Component{
@@ -12,7 +12,8 @@ class MoiveCard extends Component{
             plot: "The supernatural power shows",
             price: 199,
             rating: 8.9,
-            stars: 0
+            stars: 0,
+            fav: false
         }
         // this.addStars = this.addStars.bind(this);
     }
@@ -84,9 +85,13 @@ class MoiveCard extends Component{
         console.log("this.state: ", this.state);
     }
 
+    handleFav = () =>{
+        this.setState({fav:!this.state.fav});
+    }
+
     render(){
 
-        const{title,plot,price,rating,stars} = this.state;
+        const{title,plot,price,rating,stars,fav} = this.state;
 
         return (
             <div className="main">
@@ -117,7 +122,13 @@ class MoiveCard extends Component{
                                     className="str-btn"/>
                                 <span>{stars}</span>
                             </div>
-                            <button className="favourite-btn">Favourite</button>
+
+                            {/* {fav? <button className="unfavourite-btn" onClick={this.handleFav}>Un-Favourite</button>:
+                                <button className="favourite-btn" onClick={this.handleFav}>Favourite</button>} */}
+
+                            <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={this.handleFav}>
+                                {fav?"Un-Favourite":"Favourite"}</button>
+                            
                             <button className="cart-btn">Add to cart</button>
                         </div>
                     </div>
