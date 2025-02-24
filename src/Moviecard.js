@@ -32,6 +32,22 @@ class MoiveCard extends Component{
                 stars: this.state.stars +=0.5
             }
         )
+        this.setState(
+            {
+                stars: this.state.stars +=1.0
+            }
+        )
+        this.setState(
+            {
+                stars: this.state.stars +=1.5
+            }
+        )
+        this.setState(
+            {
+                stars: this.state.stars +=0.5
+            }
+        )
+        //only the las one setState will be called and rerenderd
         */
 
         //form2: setStates()
@@ -39,7 +55,19 @@ class MoiveCard extends Component{
             return{
                 stars: prevState.stars+0.5
             }
-        }, () => console.log("Stars inside callback:", this.state.stars)
+        }
+        );
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars+0.5
+            }
+        }
+        );
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars+0.5
+            }
+        }//, () => console.log("Stars inside callback:", this.state.stars)
         );
         console.log("this.state: ", this.state);
     }
