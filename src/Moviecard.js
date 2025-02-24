@@ -22,6 +22,8 @@ class MoiveCard extends Component{
     // }
 
     addStars = () => {
+        if(this.state.stars>=5)
+            return;
         //this.state.stars += .5;
         
         //form1: setState()
@@ -43,6 +45,8 @@ class MoiveCard extends Component{
     }
 
     removeStars = () => {
+        if(this.state.stars <=0)
+            return;
         this.setState((prevState) => {
             return{
                 stars: prevState.stars-0.5
