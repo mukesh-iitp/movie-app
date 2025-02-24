@@ -69,6 +69,7 @@ class MoiveCard extends Component{
             }
         }//, () => console.log("Stars inside callback:", this.state.stars)
         );
+        //rerendering happeing only once but addition is calling previous state so all .5 is added three times
         console.log("this.state: ", this.state);
     }
 
