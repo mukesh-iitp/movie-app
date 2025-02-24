@@ -13,7 +13,8 @@ class MoiveCard extends Component{
             price: 199,
             rating: 8.9,
             stars: 0,
-            fav: false
+            fav: false,
+            cart: false
         }
         // this.addStars = this.addStars.bind(this);
     }
@@ -89,9 +90,13 @@ class MoiveCard extends Component{
         this.setState({fav:!this.state.fav});
     }
 
+    handleCart = () =>{
+        this.setState({cart:!this.state.cart})
+    }
+
     render(){
 
-        const{title,plot,price,rating,stars,fav} = this.state;
+        const{title,plot,price,rating,stars,fav,cart} = this.state;
 
         return (
             <div className="main">
@@ -129,7 +134,9 @@ class MoiveCard extends Component{
                             <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={this.handleFav}>
                                 {fav?"Un-Favourite":"Favourite"}</button>
                             
-                            <button className="cart-btn">Add to cart</button>
+                            <button className={cart?"remove-btn":"cart-btn"} onClick={this.handleCart}>
+                                {cart?"Remove":"Add to cart"}</button>
+                            
                         </div>
                     </div>
 
