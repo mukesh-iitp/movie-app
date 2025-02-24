@@ -39,7 +39,7 @@ class MoiveCard extends Component{
             return{
                 stars: prevState.stars+0.5
             }
-        }
+        }, () => console.log("Stars inside callback:", this.state.stars)
         );
         console.log("this.state: ", this.state);
     }
@@ -51,7 +51,7 @@ class MoiveCard extends Component{
             return{
                 stars: prevState.stars-0.5
             }
-        });
+        },() => console.log("Stars inside callback:", this.state.stars));
         console.log("this.state: ", this.state);
     }
 
