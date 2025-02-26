@@ -1,10 +1,10 @@
-import MoiveCard from "./Moviecard";
+import MoiveList from "./MovieList";
 
 function App() {
   return (
     <>
     <h1>Movie App</h1>
-    <MoiveCard/>
+    <MoiveList/>
     </>
   );
 }
