@@ -1,5 +1,6 @@
 import { Component } from "react";
 
+//props are immutable it can't be modified
 /**props in functional components */
 
 function Student(props){
