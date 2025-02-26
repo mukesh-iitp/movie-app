@@ -135,7 +135,7 @@ class MoiveCard extends Component{
                                 {fav?"Un-Favourite":"Favourite"}</button>
                             
                             <button className={cart?"remove-btn":"cart-btn"} onClick={this.handleCart}>
-                                {cart?"Remove":"Add to cart"}</button>
+                                {cart?"Remove from cart":"Add to cart"}</button>
                             
                         </div>
                     </div>
