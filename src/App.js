@@ -12,7 +12,14 @@ function App() {
     <Student sname="Alexa" marks="80"/>
     <Student sname="Siri" marks="90"/>
     <Student sname="Google" marks="88"/>
+    <Student/>
     </>
   );
 }
+
+Student.defaultProps= {
+  sname : "Student",
+  marks : "N.A."
+}
+
 export default App;
