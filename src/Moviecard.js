@@ -5,20 +5,6 @@ import { Component } from "react";
 //class MoiveCard extends React.Component{
 class MoiveCard extends Component{
 
-    constructor(){
-        super();
-        this.state = {
-            title: "The Avengers",
-            plot: "The supernatural power shows",
-            price: 199,
-            rating: 8.9,
-            stars: 0,
-            fav: false,
-            cart: false
-        }
-        // this.addStars = this.addStars.bind(this);
-    }
-
     // addStars(){
     //     console.log("this.state: ", this.state);
     // }
@@ -95,9 +81,12 @@ class MoiveCard extends Component{
     }
 
     render(){
-
-        const{title,plot,price,rating,stars,fav,cart} = this.state;
-
+        console.log(this.props)
+        const {movies: data} =this.props
+        console.log(data);
+        //const{title,plot,price,rating,stars,fav,cart} = this.props;
+        //const{title,plot,price,rating,stars,fav,cart} = this.props.movies;
+        const{title,plot,price,rating,stars,fav,cart} = data;
         return (
             <div className="main">
                 <div className="movie-card">

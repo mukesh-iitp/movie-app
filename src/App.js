@@ -6,13 +6,13 @@ function App() {
     <>
     <h1>Movie App</h1>
     <MoiveList/>
+    
 
-    <hr/>
-    <h1>Students Data</h1>
+    {/* <h1>Students Data</h1>
     <Student sname="Alexa" marks="80"/>
     <Student sname="Siri" marks="90"/>
     <Student sname="Google" marks="88"/>
-    <Student/>
+    <Student/> */}
     </>
   );
 }
