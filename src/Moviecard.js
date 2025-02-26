@@ -81,18 +81,20 @@ class MoiveCard extends Component{
     }
 
     render(){
-        console.log(this.props)
-        const {movies: data} =this.props
-        console.log(data);
-        //const{title,plot,price,rating,stars,fav,cart} = this.props;
+        
+        //const {movies: data} = this.props
+        //console.log(data);
         //const{title,plot,price,rating,stars,fav,cart} = this.props.movies;
-        const{title,plot,price,rating,stars,fav,cart} = data;
+        // const{title,plot,price,rating,stars,fav,cart} = data;
+        const {title, plot, poster, price, rating, star, fav, isInCart} =  this.props.movie;
+        console.log(this.props.movie);
+
         return (
             <div className="main">
                 <div className="movie-card">
                     
                     <div className="left">
-                        <img alt="poster" src='https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg'></img>
+                        <img alt="poster" src={poster}></img>
                     </div>
 
                     <div className="right">
@@ -114,7 +116,7 @@ class MoiveCard extends Component{
                                     //onClick={this.addStars.bind(this)} 
                                     onClick={this.addStars}
                                     className="str-btn"/>
-                                <span>{stars}</span>
+                                <span>{star}</span>
                             </div>
 
                             {/* {fav? <button className="unfavourite-btn" onClick={this.handleFav}>Un-Favourite</button>:
@@ -123,8 +125,8 @@ class MoiveCard extends Component{
                             <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={this.handleFav}>
                                 {fav?"Un-Favourite":"Favourite"}</button>
                             
-                            <button className={cart?"remove-btn":"cart-btn"} onClick={this.handleCart}>
-                                {cart?"Remove from cart":"Add to cart"}</button>
+                            <button className={isInCart?"remove-btn":"cart-btn"} onClick={this.handleCart}>
+                                {isInCart?"Remove from cart":"Add to cart"}</button>
                             
                         </div>
                     </div>

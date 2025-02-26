@@ -1,12 +1,12 @@
 import MoiveList from "./MovieList";
-import Student from "./Student";
+//import Student from "./Student";
 
 function App() {
   return (
     <>
     <h1>Movie App</h1>
     <MoiveList/>
-    
+
 
     {/* <h1>Students Data</h1>
     <Student sname="Alexa" marks="80"/>
@@ -17,9 +17,9 @@ function App() {
   );
 }
 
-Student.defaultProps= {
-  sname : "Student",
-  marks : "N.A."
-}
+// Student.defaultProps= {
+//   sname : "Student",
+//   marks : "N.A."
+// }
 
 export default App;
