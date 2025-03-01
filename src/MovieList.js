@@ -56,15 +56,6 @@ class MoiveList extends Component{
         // this.addStars = this.addStars.bind(this);
     }
 
-    handleIncStar = (movie) =>{
-        const{movies} = this.state;
-        const movieId = movies.indexOf(movie);
-        movies[movieId].star +=0.5;
-        this.setState({
-            movies: movies
-        })
-    }
-
     render(){
         
         //const{title,plot,price,rating,stars,fav,isInCart} = this.state;
@@ -83,7 +74,7 @@ class MoiveList extends Component{
                 /> */}
             
                 {movies.map((movie, index) => (
-                    <MoiveCard movie = {movie} key={index} addStars={this.handleIncStar}/>
+                    <MoiveCard movie = {movie} key={index}/>
                 )
                 )}
             </>

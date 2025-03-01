@@ -9,76 +9,76 @@ class MoiveCard extends Component{
     //     console.log("this.state: ", this.state);
     // }
 
-    // addStars = () => {
-    //     if(this.state.stars>=5)
-    //         return;
-    //     //this.state.stars += .5;
+    addStars = () => {
+        if(this.state.stars>=5)
+            return;
+        //this.state.stars += .5;
         
-    //     //form1: setState()
-    //     /*this.setState(
-    //         {
-    //             stars: this.state.stars +=0.5
-    //         }
-    //     )
-    //     this.setState(
-    //         {
-    //             stars: this.state.stars +=1.0
-    //         }
-    //     )
-    //     this.setState(
-    //         {
-    //             stars: this.state.stars +=1.5
-    //         }
-    //     )
-    //     this.setState(
-    //         {
-    //             stars: this.state.stars +=0.5
-    //         }
-    //     )
-    //     //only the las one setState will be called and rerenderd
-    //     */
+        //form1: setState()
+        /*this.setState(
+            {
+                stars: this.state.stars +=0.5
+            }
+        )
+        this.setState(
+            {
+                stars: this.state.stars +=1.0
+            }
+        )
+        this.setState(
+            {
+                stars: this.state.stars +=1.5
+            }
+        )
+        this.setState(
+            {
+                stars: this.state.stars +=0.5
+            }
+        )
+        //only the las one setState will be called and rerenderd
+        */
 
-    //     //form2: setStates()
-    //     this.setState((prevState) => {
-    //         return{
-    //             stars: prevState.stars+0.5
-    //         }
-    //     }
-    //     );
-    //     this.setState((prevState) => {
-    //         return{
-    //             stars: prevState.stars+0.5
-    //         }
-    //     }
-    //     );
-    //     this.setState((prevState) => {
-    //         return{
-    //             stars: prevState.stars+0.5
-    //         }
-    //     }//, () => console.log("Stars inside callback:", this.state.stars)
-    //     );
-    //     //rerendering happeing only once but addition is calling previous state so all .5 is added three times
-    //     console.log("this.state: ", this.state);
-    // }
+        //form2: setStates()
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars+0.5
+            }
+        }
+        );
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars+0.5
+            }
+        }
+        );
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars+0.5
+            }
+        }//, () => console.log("Stars inside callback:", this.state.stars)
+        );
+        //rerendering happeing only once but addition is calling previous state so all .5 is added three times
+        console.log("this.state: ", this.state);
+    }
 
-    // removeStars = () => {
-    //     if(this.state.stars <=0)
-    //         return;
-    //     this.setState((prevState) => {
-    //         return{
-    //             stars: prevState.stars-0.5
-    //         }
-    //     },() => console.log("Stars inside callback:", this.state.stars));
-    //     console.log("this.state: ", this.state);
-    // }
+    removeStars = () => {
+        if(this.state.stars <=0)
+            return;
+        this.setState((prevState) => {
+            return{
+                stars: prevState.stars-0.5
+            }
+        },() => console.log("Stars inside callback:", this.state.stars));
+        console.log("this.state: ", this.state);
+    }
 
-    // handleFav = () =>{
-    //     this.setState({fav:!this.state.fav});
-    // }
+    handleFav = () =>{
+        this.setState({fav:!this.state.fav});
+    }
 
-    // handleCart = () =>{
-    //     this.setState({cart:!this.state.cart})
-    // }
+    handleCart = () =>{
+        this.setState({cart:!this.state.cart})
+    }
 
     render(){
         
@@ -114,7 +114,7 @@ class MoiveCard extends Component{
                                 <img alt="increase" 
                                     src="https://cdn-icons-png.flaticon.com/128/32/32563.png" 
                                     //onClick={this.addStars.bind(this)} 
-                                    onClick={()=>{this.props.addStars(this.props.movie)}}
+                                    onClick={this.addStars}
                                     className="str-btn"/>
                                 <span>{star}</span>
                             </div>
