@@ -59,9 +59,12 @@ class MoiveList extends Component{
     handleIncStar = (movie) =>{
         const{movies} = this.state;
         const movieId = movies.indexOf(movie);
+        if(movies[movieId].star >=5)
+            return;
         movies[movieId].star +=0.5;
         this.setState({
-            movies: movies
+            //movies: movies
+            movies  //alternative or shortcut or above line for same movies
         })
     }
 
@@ -83,7 +86,7 @@ class MoiveList extends Component{
                 /> */}
             
                 {movies.map((movie, index) => (
-                    <MoiveCard movie = {movie} key={index} addStars={this.handleIncStar}/>
+                    <MoiveCard movies = {movie} key={index} addStars={this.handleIncStar}/>
                 )
                 )}
             </>
