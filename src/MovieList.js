@@ -68,6 +68,18 @@ class MoiveList extends Component{
         })
     }
 
+    handleDecStar = (movie) =>{
+        const{movies} = this.state;
+        const movieId = movies.indexOf(movie);
+        if(movies[movieId].star <=0)
+            return;
+        movies[movieId].star -=0.5;
+        this.setState({
+            //movies: movies
+            movies  //alternative or shortcut or above line for same movies
+        })
+    }
+
     render(){
         
         //const{title,plot,price,rating,stars,fav,isInCart} = this.state;
@@ -86,7 +98,7 @@ class MoiveList extends Component{
                 /> */}
             
                 {movies.map((movie, index) => (
-                    <MoiveCard movies = {movie} key={index} addStars={this.handleIncStar}/>
+                    <MoiveCard movies = {movie} key={index} addStars={this.handleIncStar} removeStars={this.handleDecStar}/>
                 )
                 )}
             </>

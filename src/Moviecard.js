@@ -87,7 +87,7 @@ class MoiveCard extends Component{
         //const{title,plot,price,rating,stars,fav,cart} = this.props.movies;
         // const{title,plot,price,rating,stars,fav,cart} = data;
 
-        const{movies, addStars} = this.props;
+        const{movies, addStars, removeStars} = this.props;
 
         const {title, plot, poster, price, rating, star, fav, isInCart} =  this.props.movies;
         console.log(this.props.movies);
@@ -112,7 +112,7 @@ class MoiveCard extends Component{
                                 <img alt="decrease" 
                                     src="https://cdn-icons-png.flaticon.com/128/43/43625.png" 
                                     className="str-btn"
-                                    onClick={this.removeStars}
+                                    onClick={() => {removeStars(movies)}}
                                     />
                                 <img alt="stars" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" className="stars"/>
                                 <img alt="increase" 
