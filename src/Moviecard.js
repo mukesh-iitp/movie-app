@@ -87,10 +87,10 @@ class MoiveCard extends Component{
         //const{title,plot,price,rating,stars,fav,cart} = this.props.movies;
         // const{title,plot,price,rating,stars,fav,cart} = data;
 
-        const{movies, addStars, removeStars} = this.props;
+        const{movies, addStars, removeStars, handleFav, handleCart  } = this.props;
 
         const {title, plot, poster, price, rating, star, fav, isInCart} =  this.props.movies;
-        console.log(this.props.movies);
+        // console.log(this.props.movies);
 
 
         return (
@@ -127,10 +127,10 @@ class MoiveCard extends Component{
                             {/* {fav? <button className="unfavourite-btn" onClick={this.handleFav}>Un-Favourite</button>:
                                 <button className="favourite-btn" onClick={this.handleFav}>Favourite</button>} */}
 
-                            <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={this.handleFav}>
+                            <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={() => {handleFav(movies)}}>
                                 {fav?"Un-Favourite":"Favourite"}</button>
                             
-                            <button className={isInCart?"remove-btn":"cart-btn"} onClick={this.handleCart}>
+                            <button className={isInCart?"remove-btn":"cart-btn"} onClick={()=>{handleCart(movies)}}>
                                 {isInCart?"Remove from cart":"Add to cart"}</button>
                             
                         </div>

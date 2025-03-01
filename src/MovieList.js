@@ -79,6 +79,25 @@ class MoiveList extends Component{
             movies  //alternative or shortcut or above line for same movies
         })
     }
+    handleFav = (movie) =>{
+        const{movies} = this.state;
+        const movieId = movies.indexOf(movie);
+        movies[movieId].fav = !movies[movieId].fav;
+        this.setState({
+            //movies: movies
+            movies  //alternative or shortcut or above line for same movies
+        })
+    }
+    handleCart = (movie) =>{
+        const{movies} = this.state;
+        const movieId = movies.indexOf(movie);
+        movies[movieId].isInCart = !movies[movieId].isInCart;
+        this.setState({
+            //movies: movies
+            movies  //alternative or shortcut or above line for same movies
+        })
+    }
+
 
     render(){
         
@@ -98,7 +117,14 @@ class MoiveList extends Component{
                 /> */}
             
                 {movies.map((movie, index) => (
-                    <MoiveCard movies = {movie} key={index} addStars={this.handleIncStar} removeStars={this.handleDecStar}/>
+                    <MoiveCard 
+                        movies = {movie} 
+                        key={index} 
+                        addStars={this.handleIncStar} 
+                        removeStars={this.handleDecStar}
+                        handleFav={this.handleFav}
+                        handleCart={this.handleCart}
+                    />
                 )
                 )}
             </>
