@@ -1,10 +1,11 @@
 import MoiveList from "./MovieList";
+import Navbar from "./Navbar";
 //import Student from "./Student";
 
 function App() {
   return (
     <>
-    <h1>Movie App</h1>
+    <Navbar/>
     <MoiveList/>
 
 
