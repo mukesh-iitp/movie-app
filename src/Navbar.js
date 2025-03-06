@@ -8,12 +8,12 @@ class Navbar extends React.Component{
             <>
             {/* <div className="nav"> */}
             <div style={styles.nav}>
-                <div className="title">
+                <div style={styles.title}>
                     Movie-App
                 </div>
-                <div>
-                    <img alt="Cart Icon"/>
-                    <span>0</span>
+                <div style={styles.cartIconContainer}>
+                    <img alt="Cart Icon" style={styles.cartIcon} src="https://cdn-icons-png.flaticon.com/128/891/891462.png"/>
+                    <span style={styles.cartCount}>0</span>
                 </div>
             </div>
             </>
@@ -24,15 +24,47 @@ class Navbar extends React.Component{
 
 }
 
-export default Navbar;
-
 const styles = {
+
+    cartIcon: {
+        height: 40,
+        marginRight: 20,
+        marginTop: "5px",
+    },
+
     nav: {
         width:"100%", 
-        height:70, 
+        height:50, 
         background:"cadetblue", 
         display:"flex",
         justifyContent: "space-between" 
-    }
+    },
 
-}
+    title: {
+        fontsize: 30,
+        color: "Red",
+        fontWeight: 600,
+        fontFamily: '"Montserrat", sans-serif',
+        textTransform: "uppercase",
+        marginLeft: 20,
+        marginTop: "15px"
+
+    },
+
+    cartIconContainer: {
+        position: "relative",
+        cursor: "pointer",
+    },
+
+    cartCount: {
+        background: "orange",
+        borderRadius: "50%",
+        padding: "4px 8px",
+        position: "absolute",
+        right: 10,
+        top: -5,
+        fontSize: 12,
+    }
+};
+
+export default Navbar;
