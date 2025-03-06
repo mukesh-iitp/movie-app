@@ -33,16 +33,22 @@ const styles = {
     },
 
     nav: {
-        width:"100%", 
-        height:50, 
-        background:"cadetblue", 
-        display:"flex",
-        justifyContent: "space-between" 
+        // width:"100%", 
+        // height:50, 
+        // background:"red", 
+        // display:"flex",
+        // justifyContent: "space-between",
+        height: 70,
+        background: "#4267b2",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItem: "center",
+        position: "relative"
     },
 
     title: {
         fontsize: 30,
-        color: "Red",
+        color: "#fff",
         fontWeight: 600,
         fontFamily: '"Montserrat", sans-serif',
         textTransform: "uppercase",
