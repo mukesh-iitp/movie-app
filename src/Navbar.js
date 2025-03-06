@@ -7,11 +7,7 @@ class Navbar extends React.Component{
         return(
             <>
             {/* <div className="nav"> */}
-            <div style={{width:"100%", 
-                        height:70, 
-                        background:"cadetblue", 
-                        display:"flex",
-                        justifyContent: "space-between" }}>
+            <div style={styles.nav}>
                 <div className="title">
                     Movie-App
                 </div>
@@ -29,3 +25,14 @@ class Navbar extends React.Component{
 }
 
 export default Navbar;
+
+const styles = {
+    nav: {
+        width:"100%", 
+        height:70, 
+        background:"cadetblue", 
+        display:"flex",
+        justifyContent: "space-between" 
+    }
+
+}
