@@ -1,24 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 
-const Nav = styled.div`
-    width: 100%;
+const Nav =  styled.div`
     height: 70px;
-    background: #4267b2;
-    display: flex;
-    justify-content: space-between;
-    align-item: center;
-    position: relative;
+	background: linear-gradient(170deg, #1bc059, #0d47a1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+  
 `;
 
 const Title = styled.div`
-    fontsize: 30;
+    font-size: 30px;
     color: #fff;
     font-weight: 600;
-    font-family: montserrat, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     text-transform: uppercase;
-    margin-left: 20;
-    margin-top: 15px;
+    margin-left: 20px ;
+    &:hover{color:#f00};
+
+`;
+
+
+const CartImg = styled.img`
+    height: 48px;
+    margin-right: 20px;
 `;
 
 const CartIconContainer = styled.div`
@@ -26,21 +33,17 @@ const CartIconContainer = styled.div`
     cursor: pointer;
 `;
 
-const CartCount = styled.span`
-    background: orange;
+const CartCount = styled.div`
+    background: ${props => props.color};
     border-radius: 50%;
     padding: 4px 8px;
     position: absolute;
-    right: 20px;
-    top: -5;
+    right: 10px;
+    top: -5px;
     font-size: 12px;
+    visibility: ${props => (props.show? "visible": "hidden")};
 `;
 
-const CartIcon = styled.img`
-    height: 40px;
-    margin-right: 20px;
-    margin-top: 5px;
-`;
 
 class Navbar extends React.Component{
 
@@ -55,8 +58,8 @@ class Navbar extends React.Component{
                 <Title>Movie-App</Title>
                 {/* </div> */}
                 <CartIconContainer>
-                    <CartIcon alt="Cart Icon" src="https://cdn-icons-png.flaticon.com/128/891/891462.png"/>
-                    <CartCount>0</CartCount>
+                    <CartImg alt="Cart Icon" src="https://cdn-icons-png.flaticon.com/128/891/891462.png"/>
+                    <CartCount color="yellow" show={true}>5</CartCount>
                 </CartIconContainer>
             {/* </div> */}
             </Nav>
@@ -68,53 +71,53 @@ class Navbar extends React.Component{
 
 }
 
-const styles = {
+// const styles = {
 
-    cartIcon: {
-        height: 40,
-        marginRight: 20,
-        marginTop: "5px",
-    },
+//     cartIcon: {
+//         height: 40,
+//         marginRight: 20,
+//         marginTop: "5px",
+//     },
 
-    nav: {
-        // width:"100%", 
-        // height:50, 
-        // background:"red", 
-        // display:"flex",
-        // justifyContent: "space-between",
-        height: 70,
-        background: "#4267b2",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItem: "center",
-        position: "relative"
-    },
+//     nav: {
+//         // width:"100%", 
+//         // height:50, 
+//         // background:"red", 
+//         // display:"flex",
+//         // justifyContent: "space-between",
+//         height: 70,
+//         background: "#4267b2",
+//         display: "flex",
+//         justifyContent: "space-between",
+//         alignItem: "center",
+//         position: "relative"
+//     },
 
-    title: {
-        fontsize: 30,
-        color: "#fff",
-        fontWeight: 600,
-        fontFamily: '"Montserrat", sans-serif',
-        textTransform: "uppercase",
-        marginLeft: 20,
-        marginTop: "15px"
+//     title: {
+//         fontsize: 30,
+//         color: "#fff",
+//         fontWeight: 600,
+//         fontFamily: '"Montserrat", sans-serif',
+//         textTransform: "uppercase",
+//         marginLeft: 20,
+//         marginTop: "15px"
 
-    },
+//     },
 
-    cartIconContainer: {
-        position: "relative",
-        cursor: "pointer",
-    },
+//     cartIconContainer: {
+//         position: "relative",
+//         cursor: "pointer",
+//     },
 
-    cartCount: {
-        background: "orange",
-        borderRadius: "50%",
-        padding: "4px 8px",
-        position: "absolute",
-        right: 10,
-        top: -5,
-        fontSize: 12,
-    }
-};
+//     cartCount: {
+//         background: "orange",
+//         borderRadius: "50%",
+//         padding: "4px 8px",
+//         position: "absolute",
+//         right: 10,
+//         top: -5,
+//         fontSize: 12,
+//     }
+// };
 
 export default Navbar;
