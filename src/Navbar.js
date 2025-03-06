@@ -1,4 +1,46 @@
 import React from "react";
+import styled from "styled-components";
+
+const Nav = styled.div`
+    width: 100%;
+    height: 70px;
+    background: #4267b2;
+    display: flex;
+    justify-content: space-between;
+    align-item: center;
+    position: relative;
+`;
+
+const Title = styled.div`
+    fontsize: 30;
+    color: #fff;
+    font-weight: 600;
+    font-family: montserrat, sans-serif;
+    text-transform: uppercase;
+    margin-left: 20;
+    margin-top: 15px;
+`;
+
+const CartIconContainer = styled.div`
+    position: relative;
+    cursor: pointer;
+`;
+
+const CartCount = styled.span`
+    background: orange;
+    border-radius: 50%;
+    padding: 4px 8px;
+    position: absolute;
+    right: 20px;
+    top: -5;
+    font-size: 12px;
+`;
+
+const CartIcon = styled.img`
+    height: 40px;
+    margin-right: 20px;
+    margin-top: 5px;
+`;
 
 class Navbar extends React.Component{
 
@@ -7,15 +49,17 @@ class Navbar extends React.Component{
         return(
             <>
             {/* <div className="nav"> */}
-            <div style={styles.nav}>
-                <div style={styles.title}>
-                    Movie-App
-                </div>
-                <div style={styles.cartIconContainer}>
-                    <img alt="Cart Icon" style={styles.cartIcon} src="https://cdn-icons-png.flaticon.com/128/891/891462.png"/>
-                    <span style={styles.cartCount}>0</span>
-                </div>
-            </div>
+            {/* <div style={styles.nav}> */}
+            <Nav>
+                {/* <div style={styles.title}> */}
+                <Title>Movie-App</Title>
+                {/* </div> */}
+                <CartIconContainer>
+                    <CartIcon alt="Cart Icon" src="https://cdn-icons-png.flaticon.com/128/891/891462.png"/>
+                    <CartCount>0</CartCount>
+                </CartIconContainer>
+            {/* </div> */}
+            </Nav>
             </>
 
         )
