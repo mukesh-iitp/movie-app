@@ -7,8 +7,8 @@ import Navbar from "./Navbar";
 function App() {
   return (
     <>
-    {/* <Navbar/>
-    <MoiveList/> */}
+    <Navbar/>
+    <MoiveList/>
 
 
     {/* <h1>Students Data</h1>
@@ -18,8 +18,8 @@ function App() {
     <Student/> */}
     
     
-    <HeadingOne/>
-    <HeadingTwo/>
+    {/* <HeadingOne/>
+    <HeadingTwo/> */}
     
     </>
   );
