@@ -1,7 +1,7 @@
 import HeadingOne from "./HeadingOne";
 import HeadingTwo from "./HeadingTwo";
 import MoiveList from "./MovieList";
-import Navbar from "./Navbar";
+import Navbar from "./NavbarModule";
 //import Student from "./Student";
 
 function App() {
