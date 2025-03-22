@@ -1,3 +1,5 @@
+import HeadingOne from "./HeadingOne";
+import HeadingTwo from "./HeadingTwo";
 import MoiveList from "./MovieList";
 import Navbar from "./Navbar";
 //import Student from "./Student";
@@ -5,8 +7,8 @@ import Navbar from "./Navbar";
 function App() {
   return (
     <>
-    <Navbar/>
-    <MoiveList/>
+    {/* <Navbar/>
+    <MoiveList/> */}
 
 
     {/* <h1>Students Data</h1>
@@ -14,6 +16,11 @@ function App() {
     <Student sname="Siri" marks="90"/>
     <Student sname="Google" marks="88"/>
     <Student/> */}
+    
+    
+    <HeadingOne/>
+    <HeadingTwo/>
+    
     </>
   );
 }
