@@ -2,7 +2,7 @@ import React from "react";
 //import styled from "styled-components";
 import styles from './Navbar.module.css';
 
-class Navbar extends React.Component{
+class NavbarModule extends React.Component{
 
     render(){
 
@@ -27,7 +27,7 @@ class Navbar extends React.Component{
                         alt="Cart Icon"
                         src="https://cdn-icons-png.flaticon.com/128/891/891462.png"
                     />
-                    <span className={styles.cartCount}>3</span>
+                    <span className={styles.cartCount}>2</span>
                 </div>
             </div>
             </>
@@ -87,4 +87,4 @@ class Navbar extends React.Component{
 //     }
 // };
 
-export default Navbar;
+export default NavbarModule;

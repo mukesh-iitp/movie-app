@@ -2,7 +2,7 @@ import React from "react";
 import HeadingOne from "./HeadingOne";
 import HeadingTwo from "./HeadingTwo";
 import MoiveList from "./MovieList";
-import Navbar from "./NavbarModule";
+import Navbar from "./Navbar";
 //import Student from "./Student";
 import {movies} from "./moviesData";
 
@@ -59,22 +59,27 @@ handleFav = (movie) =>{
     })
 }
 handleCart = (movie) =>{
-    const{movies} = this.state;
+    let{movies, cartCount} = this.state;
     const movieId = movies.indexOf(movie);
     movies[movieId].isInCart = !movies[movieId].isInCart;
+    if(movies[movieId].isInCart)
+      cartCount+=1;
+    else
+      cartCount-=1;
     this.setState({
         //movies: movies
-        movies  //alternative or shortcut or above line for same movies
+        movies,  //alternative or shortcut or above line for same movies
+        cartCount
     })
 }
 
   render(){
 
-    const {movies} = this.state;
+    const {movies,cartCount} = this.state;
 
     return(
       <>
-        <Navbar/>
+        <Navbar cartCount = {cartCount}/>
         <MoiveList 
           movies={movies}
           key={movies.id} 
