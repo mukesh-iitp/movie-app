@@ -1,9 +1,10 @@
 //import React from "react";
-import { Component } from "react";
+//import { Component } from "react";
 
 
 //class MoiveCard extends React.Component{
-class MoiveCard extends Component{
+//class MoiveCard extends Component{
+function MoiveCard(props){
 
     // addStars(){
     //     console.log("this.state: ", this.state);
@@ -80,17 +81,19 @@ class MoiveCard extends Component{
     //     this.setState({cart:!this.state.cart})
     // }
 
-    render(){
-        
+            
         //const {movies: data} = this.props
         //console.log(data);
         //const{title,plot,price,rating,stars,fav,cart} = this.props.movies;
         // const{title,plot,price,rating,stars,fav,cart} = data;
 
-        const{movies, addStars, removeStars, handleFav, handleCart  } = this.props;
+        // const{movies, addStars, removeStars, handleFav, handleCart  } = this.props;
 
-        const {title, plot, poster, price, rating, star, fav, isInCart} =  this.props.movies;
+        // const {title, plot, poster, price, rating, star, fav, isInCart} =  this.props.movies;
         // console.log(this.props.movies);
+
+        const{movies, addStars, removeStars, handleFav, handleCart  } = props;
+        const {title, plot, poster, price, rating, star, fav, isInCart} =  props.movies;
 
 
         return (
@@ -139,7 +142,6 @@ class MoiveCard extends Component{
                 </div>
             </div>
         );
-    }
 }
 
 export default MoiveCard;

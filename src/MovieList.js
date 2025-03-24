@@ -1,13 +1,15 @@
-import { Component } from "react";
+// import { Component } from "react";
 import MoiveCard from "./Moviecard";
 
 
-class MoiveList extends Component{
+// class MoiveList extends Component{
+function MoiveList(props){
 
-    render(){
+    
         
         //const{title,plot,price,rating,stars,fav,isInCart} = this.state;
-        const { movies, addStars, removeStars, toggleCart, toggleFav } = this.props;
+        // const { movies, addStars, removeStars, toggleCart, toggleFav } = this.props;
+        const { movies, addStars, removeStars, toggleCart, toggleFav } = props;
 
         return (
             <>
@@ -35,7 +37,7 @@ class MoiveList extends Component{
                 )}
             </>
         )
-    }
+    
 }
 
 export default MoiveList;
